@@ -130,11 +130,8 @@ LOG_DIR = args.LOG_DIR + '/logs_{}/{}_{}_embedding{}_alpha{}_mrg{}_{}_lr{}_batch
 #wandb.init(project=args.dataset + '_ProxyAnchor', notes=LOG_DIR)
 #wandb.config.update(args)
 
-#os.chdir('../data/')
-#data_root = os.getcwd()
+data_root = os.path.join(os.getcwd(), 'data')
 
-#data_root = '/nfs/nas4/vpsomas/vpsomas/multisimilarity/resource/datasets'
-data_root = '/nfs/nas4/vpsomas/vpsomas/Deep-Metric-Learning-Baselines-master/Datasets'
 # Dataset Loader and Sampler
 if args.dataset != 'Inshop':
     trn_dataset = dataset.load(
